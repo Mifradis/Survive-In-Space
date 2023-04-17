@@ -22,7 +22,7 @@ public class PlayerController : MonoBehaviour
         transform.Translate((-1) * velocity * Time.deltaTime);
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            FindObjectOfType<ShootingManager>().Shooting();
+            FindObjectOfType<ShootingManagerForPlayer>().Shooting();
         }
         if(transform.position.x > screenWidthWithWorldUnits)
         {
@@ -42,10 +42,11 @@ public class PlayerController : MonoBehaviour
         }
         
     }
-    private void OnTriggerEnter2D(Collider2D collision)
+    void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.tag == "Fireball")
+        if(collision.tag == "Fireball(red)")
         {
+            print("hit");
             Destroy(gameObject);
         }
     }

@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    public GameObject fallingBlockPrefab;
+    public GameObject enemyShipPrefab;
     Vector2 screenHalfSizeWorldUnits;
     public Vector2 secondsBetweenSpawnsMinMax;
     float nextSpawnTime;
-    public Vector2 spawnSizeMinMax;
+
     void Start()
     {
         screenHalfSizeWorldUnits = new Vector2(Camera.main.aspect * Camera.main.orthographicSize, Camera.main.orthographicSize);
@@ -20,10 +20,10 @@ public class Spawner : MonoBehaviour
         if (Time.time > nextSpawnTime)
         {
             float secondsBetweenSpawns = Mathf.Lerp(secondsBetweenSpawnsMinMax.y, secondsBetweenSpawnsMinMax.x, Difficulty.GetDifficultyPercent());
-            float spawnSize = Random.Range(spawnSizeMinMax.x, spawnSizeMinMax.y);
+            float spawnSize = 1;
             nextSpawnTime = Time.time + secondsBetweenSpawns;
             Vector2 spawnPosition = new Vector2(Random.Range(-screenHalfSizeWorldUnits.x, screenHalfSizeWorldUnits.x), screenHalfSizeWorldUnits.y + spawnSize);
-            GameObject newBlock = (GameObject) Instantiate(fallingBlockPrefab, spawnPosition, Quaternion.Euler(0, 0, Random.Range(-15, 15)));
+            GameObject newBlock = (GameObject) Instantiate(enemyShipPrefab, spawnPosition, Quaternion.Euler(0, 0, 0));
             newBlock.transform.localScale = Vector2.one * spawnSize;
         }
     }

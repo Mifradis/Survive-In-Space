@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Fireball : MonoBehaviour
 {
-    float speed = 15;
+    float speed = 8;
     float visibleHeightThreshold;
     void Start()
     {
@@ -14,10 +14,38 @@ public class Fireball : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vector3.down * speed * Time.deltaTime);
-        if(transform.position.y > visibleHeightThreshold)
+        if (gameObject.tag == "Fireball(blue)")
         {
-            Destroy(gameObject);
+            transform.Translate(Vector3.down * speed * Time.deltaTime);
+            if (transform.position.y > visibleHeightThreshold)
+            {
+                Destroy(gameObject);
+            }
+        }
+        if(gameObject.tag == "Fireball(red)")
+        {
+            transform.Translate(Vector3.down * speed * Time.deltaTime);
+            if(transform.position.y < -visibleHeightThreshold)
+            {
+                Destroy(gameObject);
+            }
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (gameObject.tag == "Fireball(red)")
+        {
+            if (collision.tag == "Player")
+            {
+                Destroy(gameObject);
+            }
+        }
+        if (gameObject.tag == "Fireball(blue)")
+        {
+            if (collision.tag == "Enemy")
+            {
+                Destroy(gameObject);
+            }
         }
     }
 }
