@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     float speed = 6;
+    public GameOver endOfGame;
     float screenWidthWithWorldUnits;
     float screenHeightWithWorldUnits;
     private void Start()
@@ -46,8 +47,8 @@ public class PlayerController : MonoBehaviour
     {
         if(collision.tag == "Fireball(red)")
         {
-            print("hit");
             Destroy(gameObject);
+            endOfGame.OnGameOver();
         }
     }
 }

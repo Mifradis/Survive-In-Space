@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemyController : MonoBehaviour
 {
     public GameObject leftGun;
+    int kills;
     public GameObject rightGun;
     public Vector2 speedMinMax;
     float speed;
@@ -73,8 +74,16 @@ public class EnemyController : MonoBehaviour
     {
         if(collision.tag == "Fireball(blue)")
         {
-            print("hit");
             Destroy(gameObject);
+            setKills(kills + 1);
         }
+    }
+    public int getKills()
+    {
+        return kills;
+    }
+    public void setKills(int newKills)
+    {
+        kills = newKills;
     }
 }
