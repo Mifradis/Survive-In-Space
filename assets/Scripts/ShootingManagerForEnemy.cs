@@ -7,7 +7,7 @@ public class ShootingManagerForEnemy : MonoBehaviour
     public GameObject gunRightPrefab;
     public GameObject gunLeftPrefab;
     public GameObject fireballPrefab;
-    float secondsToNextFireballSpawn = 1.1f;
+    float secondsToNextFireballSpawn = 1f;
     float nextFireballSpawn;
     public void Shooting()
     {

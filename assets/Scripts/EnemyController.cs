@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyController : MonoBehaviour
 {
     public GameObject leftGun;
-    int kills;
+    KillCounter counter;
     public GameObject rightGun;
     public Vector2 speedMinMax;
     float speed;
@@ -13,12 +13,15 @@ public class EnemyController : MonoBehaviour
     float enemyMovementRangeWidth;
     float verticalPosition = 1;
     float horizontalPosition = 1;
+    ShootingManagerForEnemy shootingForEnemy;
     void Start()
     {
         speed = Mathf.Lerp(speedMinMax.x, speedMinMax.y, Difficulty.GetDifficultyPercent());
         enemyMovementRangeHeight = Camera.main.orthographicSize / 2f;
         enemyMovementRangeWidth = Camera.main.orthographicSize * Camera.main.aspect;
         Physics2D.queriesStartInColliders = false;
+        counter = FindObjectOfType<KillCounter>();
+        shootingForEnemy = FindObjectOfType<ShootingManagerForEnemy>();
     }
 
     
@@ -59,7 +62,7 @@ public class EnemyController : MonoBehaviour
         {
             if (hitInfoLeft.collider.tag == "Player")
             {
-                FindObjectOfType<ShootingManagerForEnemy>().Shooting();
+                shootingForEnemy.Shooting();
             }
         }        
         if (hitInfoRight.collider != null)
@@ -75,15 +78,7 @@ public class EnemyController : MonoBehaviour
         if(collision.tag == "Fireball(blue)")
         {
             Destroy(gameObject);
-            setKills(kills + 1);
+            counter.setDestroys(counter.getDestroys() + 1);
         }
-    }
-    public int getKills()
-    {
-        return kills;
-    }
-    public void setKills(int newKills)
-    {
-        kills = newKills;
     }
 }

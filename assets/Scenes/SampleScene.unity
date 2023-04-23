@@ -134,7 +134,6 @@ GameObject:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
-  - component: {fileID: 519420033}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -204,23 +203,10 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1064642436}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &519420033
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 519420028}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a7ee4242e7ada64ab9073f4b4c07d08, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &604544296 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3295805516676162699, guid: 593f6224e55152d47adc0c19c30be0cf, type: 3}
@@ -330,8 +316,8 @@ RectTransform:
   m_Children:
   - {fileID: 2104757102}
   - {fileID: 1989173309}
-  m_Father: {fileID: 519420032}
-  m_RootOrder: 0
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -367,11 +353,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
-  m_ScreenMatchMode: 0
+  m_ScreenMatchMode: 1
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
@@ -614,7 +600,7 @@ GameObject:
   - component: {fileID: 1518931298}
   - component: {fileID: 1518931300}
   m_Layer: 0
-  m_Name: Second Counter
+  m_Name: Time Counter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -635,11 +621,11 @@ RectTransform:
   m_Father: {fileID: 1989173309}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -210, y: 338}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: -316.00003, y: 382.00006}
   m_SizeDelta: {x: 200, y: 50}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 0, y: 1}
 --- !u!114 &1518931298
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1056,11 +1042,11 @@ RectTransform:
   m_Father: {fileID: 1989173309}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 351, y: 338}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 467.00006, y: 389.00003}
   m_SizeDelta: {x: 200, y: 50}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 1, y: 1}
 --- !u!114 &1900441778
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1170,8 +1156,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ebca05bc5405db4bb10471cc4b5b1be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destroys: {fileID: 5585367120969046571, guid: c38c669f00318884ab358f389b839c0f, type: 3}
+  destroys: 0
   killCounter: {fileID: 1900441778}
+  endGameDestroys: {fileID: 1500359349}
+  destroyText: 
 --- !u!1 &1989173308
 GameObject:
   m_ObjectHideFlags: 0
@@ -1365,7 +1353,6 @@ MonoBehaviour:
   onGame: {fileID: 1989173308}
   gameOverScreen: {fileID: 2104757101}
   surviveSecondsUI: {fileID: 1862592994}
-  killCounter: {fileID: 1500359349}
 --- !u!1 &1988960399085603 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3294978329777010347, guid: 593f6224e55152d47adc0c19c30be0cf, type: 3}
