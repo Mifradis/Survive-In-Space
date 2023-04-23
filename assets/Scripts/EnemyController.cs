@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class EnemyController : MonoBehaviour
 {
+    
     public GameObject leftGun;
     KillCounter counter;
     public GameObject rightGun;
@@ -79,6 +81,7 @@ public class EnemyController : MonoBehaviour
         {
             Destroy(gameObject);
             counter.setDestroys(counter.getDestroys() + 1);
+
         }
     }
 }

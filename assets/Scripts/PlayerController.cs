@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class PlayerController : MonoBehaviour
 {
@@ -47,6 +48,7 @@ public class PlayerController : MonoBehaviour
     {
         if(collision.tag == "Fireball(red)")
         {
+            Camera.main.DOShakePosition(0.5f, 0.3f);
             Destroy(gameObject);
             endOfGame.OnGameOver();
         }

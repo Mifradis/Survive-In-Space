@@ -29,7 +29,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5586869377295992953}
-  m_RootOrder: -1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
 --- !u!1 &5409023397650175105
 GameObject:
@@ -60,7 +60,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5586869377295992953}
-  m_RootOrder: -1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
 --- !u!1 &5409023398676056152
 GameObject:
@@ -92,7 +92,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5586869377295992953}
-  m_RootOrder: -1
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5409023398676056158
 MonoBehaviour:
@@ -316,7 +316,7 @@ Transform:
   - {fileID: 5409023397650175110}
   - {fileID: 5409023398676056153}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5724718399179887427
 SpriteRenderer:
@@ -602,7 +602,6 @@ PolygonCollider2D:
       - {x: 0.055, y: -0.19999999}
       - {x: 0.085, y: -0.11}
       - {x: 0.195, y: -0.14999999}
-  m_UseDelaunayMesh: 0
 --- !u!114 &5585367120969046571
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -615,7 +614,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4f64636172b74d4190ab4fe9b804eb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cam: {fileID: 6077067157079861676, guid: bc1e99749ef204b4289dc2c08a10107f, type: 3}
   leftGun: {fileID: 5409023397358189526}
   rightGun: {fileID: 5409023397650175105}
-  speedMinMax: {x: 3, y: 5}
-  playersShip: {fileID: 0}
+  speedMinMax: {x: 3, y: 6}
